@@ -14,6 +14,8 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @javax.persistence.Id
+    private String id;
     private String CPF;
     private String nome;
     private String nascimento;
@@ -21,6 +23,8 @@ public class User {
     private String senha;
     private String telefone;
     private String endereco;
+
+
 
     // Construtor
     public User(String nome, String CPF, String nascimento, String email, String senha, String telefone, String endereco) {
@@ -31,6 +35,10 @@ public class User {
         this.senha = senha;
         this.telefone = telefone;
         this.endereco = endereco;
+    }
+
+    public User() {
+
     }
 
     // Getter e Setter
@@ -88,5 +96,13 @@ public class User {
 
     public void setEndereco(String endereco) {
         this.endereco = endereco;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
     }
 }
